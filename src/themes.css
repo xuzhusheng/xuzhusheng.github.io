@@ -1,0 +1,27 @@
+:root {
+    --body: #ffffff;
+    --text: #4c2b91;
+    --expTxtColor: #000000;
+    --highlight: #e9e3f5;
+    --dark: #1d0c41;
+    --secondaryText: #7d56c2;
+    --imageHighlight: #2b1958;
+    --compImgHighlight: #e1e2e1;
+    --jacketColor: #e1e2e1;
+    --headerColor: #e1e2e1;
+    --splashBg: #7d56c2;
+}
+
+[data-theme="dark"] {
+    --body: #263238;
+    --text: #aeaeae;
+    --expTxtColor: #000a12;
+    --highlight: #4f5b62;
+    --dark: #000a12;
+    --secondaryText: #aeaeae;
+    --imageHighlight: #607d8b;
+    --compImgHighlight: #e6e6e6;
+    --jacketColor: #8eacbb;
+    --headerColor: #34515e;
+    --splashBg: #4f5b62;
+}

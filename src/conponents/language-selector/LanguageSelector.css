@@ -1,0 +1,22 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Remove default arrow */
+    /* background-image: url(...); */
+    /* Add custom arrow */
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    /* margin: 0; */
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    /* outline: none; */
+}
+
+select::-ms-expand {
+    display: none; /* Hide the default arrow in Internet Explorer 10 and Internet Explorer 11 */
+}

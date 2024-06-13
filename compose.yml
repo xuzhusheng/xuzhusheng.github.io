@@ -1,0 +1,18 @@
+services:
+  portfolio:
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 5173:5173
+    # develop:
+    #   watch:
+    #     - action: sync
+    #       path: ./src
+    #       target: /app/src
+    #       ignore:
+    #         - node_modules/
+    #     - action: rebuild
+    #       path: pacakage.json
+    tty: true

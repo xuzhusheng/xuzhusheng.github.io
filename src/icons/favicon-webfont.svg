@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise');
+
+        svg {
+            background-color: rgb(15 23 42);
+            width: 128px;
+            height: 128px;
+        }
+
+        text {
+            fill: rgb(226, 232, 240);
+            font-size: 80px;
+            text-anchor: middle;
+            dominant-baseline: central;
+            font-family: "Monsieur La Doulaise";
+        }
+    </style>
+    <text x="50%" y="50%">
+        Xu
+    </text>
+</svg>

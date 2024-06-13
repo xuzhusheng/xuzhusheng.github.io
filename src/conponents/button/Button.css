@@ -1,0 +1,20 @@
+.button {
+    background-color: rgb(7, 148, 129) !important;
+    color: var(--button-text-color) !important;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
+
+.button:hover {
+    background-color: rgb(45, 212, 191) !important;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
