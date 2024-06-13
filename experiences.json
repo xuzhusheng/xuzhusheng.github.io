@@ -1,0 +1,32 @@
+[
+    {
+        "duration": "July 2019 - March 2023",
+        "title": "Technical Director",
+        "company": "Shengjie Transportation Technology",
+        "url": "http://shengjieit.cn",
+        "desc": [
+            "Delivered a BIM (Building Information Modeling) model lightweight platform.",
+            "Delivered 3D/VR applications and company websites."
+        ]
+    },
+    {
+        "duration": "April 2017 - June 2019",
+        "title": "Architect",
+        "company": "Doron Information Technology",
+        "url": "https://www.weilaizhushou.com",
+        "desc": [
+            "Delivered a big data processing pipeline with Storm.",
+            "Built the product “Chronos” with microservices architecture."
+        ]
+    },
+    {
+        "duration": "July 2019 - March 2023",
+        "title": "Architect",
+        "company": "Psychology 001",
+        "url": "http://www.xinli001.com",
+        "desc": [
+            "Refactored the existing platform with microservices.",
+            "Built a full-text search system."
+        ]
+    }
+]
