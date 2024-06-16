@@ -1,4 +1,4 @@
-name: deploy
+name: update-data
 env:
     GITHUB_USERNAME: ${{ github.repository_owner }}
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
