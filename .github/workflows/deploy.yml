@@ -22,6 +22,6 @@ jobs:
 
             - uses: JamesIves/github-pages-deploy-action@v4
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This is provided by GitHub.
+                  token: ${{ secrets.GITHUB_TOKEN }} # This is provided by GitHub.
                   BRANCH: master
                   FOLDER: dist
