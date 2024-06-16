@@ -21,5 +21,5 @@ jobs:
             - run: |
                 git add ./public/profile.json ./public/blogs.json
                 git commit -m "update data"
-                git push -u main master
+                git push -u origin master
 

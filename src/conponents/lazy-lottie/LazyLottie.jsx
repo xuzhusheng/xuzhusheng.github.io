@@ -8,7 +8,6 @@ export default function LazyLottie({animationUrl}) {
     const [data, setData] = useState(null)
     useEffect(()=> {
         (async () => {
-            console.debug(animationUrl)
             const response = await fetch(animationUrl);
             setData(await response.json());
         })();

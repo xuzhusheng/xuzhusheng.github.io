@@ -1,11 +1,20 @@
-import SocialMedia from "/src/conponents/social-media/SocialMedia.jsx";
+// import SocialMedia from "/src/conponents/social-media/SocialMedia.jsx";
 import Skills from "/src/conponents/skills/Skills.jsx";
-import Experience from "/src/conponents/experience/Experiences.jsx";
-import Projects from "/src/conponents/projects/Projects.jsx";
+// import Experience from "/src/conponents/experience/Experiences.jsx";
+// import Projects from "/src/conponents/projects/Projects.jsx";
 import Button from "/src/conponents/button/Button.jsx";
 import "./Home.css";
 import LazyLottie from "../../conponents/lazy-lottie/LazyLottie";
+import { Suspense, lazy } from "react";
 
+const SocialMedia = lazy(() =>
+    import("/src/conponents/social-media/SocialMedia.jsx")
+);
+
+const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
+const Experience = lazy(() =>
+    import("/src/conponents/experience/Experiences.jsx")
+);
 const LOTTIE_URL = "/assets/lotties/greeting-lottie.json";
 
 export default function Home() {
@@ -22,19 +31,25 @@ export default function Home() {
                                 Python, Java, JavaScript.
                             </p>
                         </div>
-                        <SocialMedia />
+                        <Suspense>
+                            <SocialMedia />
+                        </Suspense>
+
                         <div className="button-div">
                             <Button text="Contact Me" href="/contact" />
                             <Button text="See My Resume" href={"/resume"} />
                         </div>
                     </div>
-
-                    <LazyLottie animationUrl={LOTTIE_URL} />
+                    <div>
+                        <LazyLottie animationUrl={LOTTIE_URL} />
+                    </div>
                 </div>
             </div>
             <Skills />
-            <Projects />
-            <Experience />
+            <Suspense>
+                <Projects />
+                <Experience />
+            </Suspense>
         </>
     );
 }

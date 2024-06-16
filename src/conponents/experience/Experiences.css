@@ -5,9 +5,13 @@
 .experience {
     /* display: flex;
     flex-wrap: wrap; */
-    ::marker {
-        content: "👉    ";
+    li {
+        list-style-type: "👉    ";
     }
+     /* Safari doesn’t support the content property on ::marker yet */
+    /* ::marker {
+        content: "👉    ";
+    } */
     margin-bottom: 2em;
     align-items: start !important;
     gap: 0 2em !important;
