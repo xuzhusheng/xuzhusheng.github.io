@@ -1,9 +1,11 @@
 name: deploy
+permissions:
+    contents: write
 env:
     VITE_HOST: https://xuzhusheng.github.io/
     VITE_EMAIL_TEMPLATE_ID: portfolio
     VITE_EMAIL_SERVICE_ID: g
-    VITE_EMAIL_API_PUBLIC_KEY: ${{ secrets.EMAIL_API_PUBLIC_KEY }} 
+    VITE_EMAIL_API_PUBLIC_KEY: ${{ secrets.EMAIL_API_PUBLIC_KEY }}
 on:
     workflow_dispatch:
     push:
