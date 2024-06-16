@@ -19,9 +19,7 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
-            - run: |
-                  cd portfolio
-                  node fetch.js
+            - run: node fetch.js
             - run: |
                   git add ./public/profile.json ./public/blogs.json
                   git commit -m "update data"
