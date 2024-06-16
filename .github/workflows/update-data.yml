@@ -1,0 +1,25 @@
+name: deploy
+env:
+    GITHUB_USERNAME: ${{ github.repository_owner }}
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+    MEDIUM_USERNAME: xuzhusheng
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: "0 0 * * *"
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - run: git checkout portfolio/main fetch.js
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - run: |
+                cd portfolio
+                node fetch.js
+            - run: |
+                git add ./public/profile.json ./public/blogs.json
+                git commit -m "update data"
+                git push -u main master
+
