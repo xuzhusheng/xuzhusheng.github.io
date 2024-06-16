@@ -17,6 +17,7 @@ jobs:
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
+            - run: npm i -D @swc/cli @swc/core
             - run: npm ci
             - run: npm run build
 
