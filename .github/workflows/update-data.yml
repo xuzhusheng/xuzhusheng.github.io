@@ -1,4 +1,6 @@
 name: update-data
+permissions:
+    contents: write
 env:
     GITHUB_USERNAME: ${{ github.repository_owner }}
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -27,7 +29,7 @@ jobs:
                   node fetch.js
                   pwd
                   ls
-            - run: |
-                  git add ./public/profile.json ./public/blogs.json
-                  git commit -m "update data"
-                  git push -u origin master
+            # - run: |
+            #       git add ./public/profile.json ./public/blogs.json
+            #       git commit -m "update data"
+            #       git push -u origin master
