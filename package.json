@@ -7,7 +7,7 @@
     "scripts": {
         "dev": "vite --host=0.0.0.0 --debug",
         "start": "vite --host=0.0.0.0 --debug",
-        "build": "vite build",
+        "build": "node fetch.js && vite build",
         "predeploy": "npm run build",
         "deploy": "gh-pages -b master -d dist",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
