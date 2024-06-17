@@ -2,6 +2,8 @@ name: deploy
 permissions:
     contents: write
 env:
+    GITHUB_USERNAME: xuzhusheng
+    MEDIUM_USERNAME: xuzhusheng
     VITE_HOST: https://xuzhusheng.github.io/
     VITE_EMAIL_TEMPLATE_ID: portfolio
     VITE_EMAIL_SERVICE_ID: g
