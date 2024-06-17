@@ -3,6 +3,7 @@ permissions:
     contents: write
 env:
     GITHUB_USERNAME: xuzhusheng
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     MEDIUM_USERNAME: xuzhusheng
     VITE_HOST: https://xuzhusheng.github.io/
     VITE_EMAIL_TEMPLATE_ID: portfolio
