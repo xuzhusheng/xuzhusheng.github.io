@@ -25,6 +25,8 @@ jobs:
             - run: npm ci
             - run: |
                   node fetch.js
+                  pwd
+                  ls
             - run: |
                   git add ./public/profile.json ./public/blogs.json
                   git commit -m "update data"
