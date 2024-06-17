@@ -14,13 +14,16 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   sparse-checkout: |
+                      package.json
+                      package-lock.json
                       fetch.js
                   sparse-checkout-cone-mode: false
             - uses: actions/setup-node@v4
               with:
                   node-version: 20
+            - run: npm i -D @swc/cli @swc/core
+            - run: npm ci
             - run: |
-                  cd portfolio
                   node fetch.js
             - run: |
                   git add ./public/profile.json ./public/blogs.json
