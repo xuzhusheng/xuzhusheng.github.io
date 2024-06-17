@@ -23,5 +23,7 @@ services:
         build:
             context: .
             target: prod
+        volumes:
+            - ./dist:/usr/share/nginx/html
         ports:
             - 80:80
