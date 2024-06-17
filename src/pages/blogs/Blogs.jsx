@@ -16,12 +16,13 @@ export default function Blogs() {
     }, []);
 
     const blogsCard = blogs.map((blog, key) => {
-        const thumbnail = blog.description.match(/<img[^>]+src="([^">]+)"/)[1]
-        const subtitle = blog.description.match(
+        const thumbnail = blog.content.match(/<img[^>]+src="([^">]+)"/)[1]
+        const subtitle = blog.content.match(
             // eslint-disable-next-line no-useless-escape
             /(?<=\<h4>)(.*?)(?=\<)/g
         )[1];
-        const pubDate = new Date(blog.pubDate).toLocaleDateString('en-us', {year:"numeric", month:"short", day:"numeric"}) 
+
+        const pubDate = new Date(blog.published).toLocaleDateString('en-us', {year:"numeric", month:"short", day:"numeric"}) 
         return (
             <div key={key} id="blog-card" onClick={() => openURL(blog.link)}>
                 <div className="description">
