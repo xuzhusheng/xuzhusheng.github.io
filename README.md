@@ -1,6 +1,6 @@
 # Portfolio
 
-## Portfolio website build with React
+## Portfolio website built with React
 
 ## Technologies Used 
 
