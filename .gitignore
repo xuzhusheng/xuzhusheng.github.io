@@ -24,3 +24,6 @@ dist-ssr
 *.sw?
 
 .env
+
+public/profile.json
+public/blogs.json

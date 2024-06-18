@@ -24,6 +24,7 @@ services:
             context: .
             target: prod
         volumes:
-            - ./dist:/usr/share/nginx/html
+            - ./dist:/var/www/app
+            - ./prod.conf:/etc/nginx/conf.d/prod.conf
         ports:
             - 80:80

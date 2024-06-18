@@ -4,21 +4,21 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeContext } from "./contexts";
 import Home from "./pages/home/Home";
 import Root from "./pages/root/Root";
-// import Blogs from "./pages/blogs/Blogs";
-// import Resume from "./pages/resume/Resume";
-// import Contact from "./pages/contact/Contact";
 import useLocalStorage from "./useLocalStorage";
 import "./i18n";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./conponents/seo/SEO";
 import { SEO_META_DATA } from "./portfolio";
-import { lazy } from "react";
+// import { lazy } from "react";
+import lazyWithRetry from "./lazyWithRetry";
 
-// const Root = lazy(()=> import("./pages/root/Root"))
-// const Home = lazy(() => import("./pages/home/Home"));
-const Blogs = lazy(() => import("./pages/blogs/Blogs"));
-const Resume = lazy(() => import("./pages/resume/Resume"));
-const Contact = lazy(() => import("./pages/contact/Contact"));
+
+// const Blogs = lazy(() => import("./pages/blogs/Blogs"));
+// const Resume = lazy(() => import("./pages/resume/Resume"));
+// const Contact = lazy(() => import("./pages/contact/Contact"));
+const Blogs = lazyWithRetry(() => import("./pages/blogs/Blogs"));
+const Resume = lazyWithRetry(() => import("./pages/resume/Resume"));
+const Contact = lazyWithRetry(() => import("./pages/contact/Contact"));
 
 export default function App() {
     const preferredTheme = matchMedia("(prefers-color-scheme: dark)").matches

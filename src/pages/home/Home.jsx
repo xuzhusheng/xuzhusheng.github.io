@@ -5,16 +5,29 @@ import Skills from "/src/conponents/skills/Skills.jsx";
 import Button from "/src/conponents/button/Button.jsx";
 import "./Home.css";
 import LazyLottie from "../../conponents/lazy-lottie/LazyLottie";
-import { Suspense, lazy } from "react";
+import { Suspense } from "react";
+import lazyWithRetry from "../../lazyWithRetry";
 
-const SocialMedia = lazy(() =>
+// const SocialMedia = lazy(() =>
+//     import("/src/conponents/social-media/SocialMedia.jsx")
+// );
+
+// const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
+// const Experience = lazy(() =>
+//     import("/src/conponents/experience/Experiences.jsx")
+// );
+
+const SocialMedia = lazyWithRetry(() =>
     import("/src/conponents/social-media/SocialMedia.jsx")
 );
 
-const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
-const Experience = lazy(() =>
+const Projects = lazyWithRetry(() =>
+    import("/src/conponents/projects/Projects.jsx")
+);
+const Experience = lazyWithRetry(() =>
     import("/src/conponents/experience/Experiences.jsx")
 );
+
 const LOTTIE_URL = "/assets/lotties/greeting-lottie.json";
 
 export default function Home() {
