@@ -5,7 +5,7 @@ import { ThemeContext } from "./contexts";
 import Home from "./pages/home/Home";
 import Root from "./pages/root/Root";
 import useLocalStorage from "./useLocalStorage";
-import "./i18n";
+// import "./i18n";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./conponents/seo/SEO";
 import { SEO_META_DATA } from "./portfolio";
