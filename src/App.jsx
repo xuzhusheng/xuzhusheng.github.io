@@ -9,16 +9,12 @@ import useLocalStorage from "./useLocalStorage";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./conponents/seo/SEO";
 import { SEO_META_DATA } from "./portfolio";
-// import { lazy } from "react";
-import lazyWithRetry from "./lazyWithRetry";
+import { lazy } from "react";
 
 
-// const Blogs = lazy(() => import("./pages/blogs/Blogs"));
-// const Resume = lazy(() => import("./pages/resume/Resume"));
-// const Contact = lazy(() => import("./pages/contact/Contact"));
-const Blogs = lazyWithRetry(() => import("./pages/blogs/Blogs"));
-const Resume = lazyWithRetry(() => import("./pages/resume/Resume"));
-const Contact = lazyWithRetry(() => import("./pages/contact/Contact"));
+const Blogs = lazy(() => import("./pages/blogs/Blogs"));
+const Resume = lazy(() => import("./pages/resume/Resume"));
+const Contact = lazy(() => import("./pages/contact/Contact"));
 
 export default function App() {
     const preferredTheme = matchMedia("(prefers-color-scheme: dark)").matches

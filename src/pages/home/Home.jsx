@@ -5,26 +5,14 @@ import Skills from "/src/conponents/skills/Skills.jsx";
 import Button from "/src/conponents/button/Button.jsx";
 import "./Home.css";
 import LazyLottie from "../../conponents/lazy-lottie/LazyLottie";
-import { Suspense } from "react";
-import lazyWithRetry from "../../lazyWithRetry";
+import { Suspense, lazy } from "react";
 
-// const SocialMedia = lazy(() =>
-//     import("/src/conponents/social-media/SocialMedia.jsx")
-// );
-
-// const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
-// const Experience = lazy(() =>
-//     import("/src/conponents/experience/Experiences.jsx")
-// );
-
-const SocialMedia = lazyWithRetry(() =>
+const SocialMedia = lazy(() =>
     import("/src/conponents/social-media/SocialMedia.jsx")
 );
 
-const Projects = lazyWithRetry(() =>
-    import("/src/conponents/projects/Projects.jsx")
-);
-const Experience = lazyWithRetry(() =>
+const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
+const Experience = lazy(() =>
     import("/src/conponents/experience/Experiences.jsx")
 );
 
