@@ -27,14 +27,21 @@ import { visualizer } from "rollup-plugin-visualizer";
 export default defineConfig({
     build: {
         cssCodeSplit: false,
-        // rollupOptions: {
-        //     output: {
-        //         manualChunks: {
-        //             verdor: vendorChunk,
-        //             ...splitChunks,
-        //         },
-        //     },
-        // },
+        rollupOptions: {
+            output: {
+                assetFileNames: asset => {
+                    if (asset.name.endsWith(".ttf")){
+                        return `assets/fonts/${asset.name}`;
+                    }
+                    
+                    return "assets/[name]-[hash][extname]";
+                }
+                // manualChunks: {
+                //     verdor: vendorChunk,
+                //     ...splitChunks,
+                // },
+            },
+        },
     },
     plugins: [
         react(),
@@ -60,6 +67,7 @@ export default defineConfig({
         proxy: {
             "/assets": {
                 target: "http://localhost:5173",
+                changeOrigin: true,
                 rewrite: (path) => path.replace("/assets", "/src/assets"),
             },
         },
