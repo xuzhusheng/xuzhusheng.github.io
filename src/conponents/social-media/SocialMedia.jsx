@@ -1,8 +1,18 @@
 import "./SocialMedia.css";
-import "@fortawesome/fontawesome-free/js/all.min";
 import {SOCIAL_MEDIAS} from "../../portfolio"
-// eslint-disable-next-line no-undef
-FontAwesome.config.autoReplaceSvg = "nest";
+import { config, library, dom } from "@fortawesome/fontawesome-svg-core";
+import {
+    faGithub,
+    faLinkedinIn,
+    faMedium,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+config.autoReplaceSvg = "nest";
+
+library.add(faGithub, faLinkedinIn, faMedium, faEnvelope);
+dom.watch();
+
 
 
 const socialMediaLinks = SOCIAL_MEDIAS.map((media, key) => (

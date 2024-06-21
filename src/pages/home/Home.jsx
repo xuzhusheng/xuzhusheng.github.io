@@ -32,6 +32,7 @@ export default function Home() {
                                 Python, Java, JavaScript.
                             </p>
                         </div>
+
                         <SocialMedia />
                         <div className="button-div">
                             <Button text="Contact Me" href="/contact" />
@@ -43,8 +44,9 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <Skills />
+
             <Suspense>
+                <Skills />
                 <Projects />
                 <Experience />
             </Suspense>

@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import "./Projects.css";
 
-import "@fortawesome/fontawesome-free/js/all.min";
+import { config, library, dom } from "@fortawesome/fontawesome-svg-core";
+import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
 
-// eslint-disable-next-line no-undef
-FontAwesome.config.autoReplaceSvg = "nest";
+config.autoReplaceSvg = "nest";
+
+library.add(faCodeFork, faStar);
+dom.watch();
 
 const openURL = (url) =>
     window.open(url, "_blank", "noopener,noreferrer");
