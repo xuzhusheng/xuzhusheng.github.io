@@ -1,11 +1,12 @@
 @font-face {
     font-family: "Monsieur La Doulaise";
-    src: url("./assets/fonts/MonsieurLaDoulaise-Regular.ttf");
+    src: url("./assets/fonts/MonsieurLaDoulaise-Regular.woff2") format("woff2"), url("./assets/fonts/MonsieurLaDoulaise-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Open Sans";
-    src: url("./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf")
+    font-family: "Playfair Display";
+    src: url("./assets/fonts/PlayfairDisplay-VariableFont_wght.woff2")
+        format("woff2-variations"), url("./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf")
         format("truetype-variations");
     font-style: normal;
     font-weight: 1 999;
@@ -13,8 +14,9 @@
 }
 
 @font-face {
-    font-family: "Open Sans";
-    src: url("./assets/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf")
+    font-family: "Playfair Display";
+    src: url("./assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff2")
+        format("woff2-variations"), url("./assets/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf")
         format("truetype-variations");
     font-style: italic;
     font-weight: 1 999;
@@ -22,8 +24,9 @@
 }
 
 @font-face {
-    font-family: "Playfair Display";
-    src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf")
+    font-family: "Open Sans";
+    src: url("./assets/fonts/OpenSans-VariableFont_wdth,wght.woff2")
+        format("woff2-variations"), url("./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf")
         format("truetype-variations");
     font-style: normal;
     font-weight: 1 999;
@@ -31,8 +34,9 @@
 }
 
 @font-face {
-    font-family: "Playfair Display";
-    src: url("./assets/fonts/Playfair_Display/PlayfairDisplay-Italic-VariableFont_wght.ttf")
+    font-family: "Open Sans";
+    src: url("./assets/fonts/OpenSans-Italic-VariableFont_wdth,wght.woff2")
+        format("woff2-variations"), url("./assets/fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf")
         format("truetype-variations");
     font-style: italic;
     font-weight: 1 999;

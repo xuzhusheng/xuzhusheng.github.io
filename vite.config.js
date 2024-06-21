@@ -15,13 +15,12 @@ import { visualizer } from "rollup-plugin-visualizer";
 //     VENDOR_CHUNKS_PACKAGES.includes(key)
 // );
 
-// const splitChunks = Object
-//     .keys(dependencies)
-//     .filter((key) => VENDOR_CHUNKS_PACKAGES.includes(key))
+// const splitChunks = Object.keys(dependencies)
+//     .filter((key) => !VENDOR_CHUNKS_PACKAGES.includes(key))
 //     .reduce((chunks, key) => {
 //         chunks[key] = [key];
-//         return chunks
-//     }, {})
+//         return chunks;
+//     }, {});
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -29,13 +28,13 @@ export default defineConfig({
         cssCodeSplit: false,
         rollupOptions: {
             output: {
-                assetFileNames: asset => {
-                    if (asset.name.endsWith(".ttf")){
+                assetFileNames: (asset) => {
+                    if (asset.name.endsWith(".ttf") || asset.name.endsWith(".woff2")) {
                         return `assets/fonts/${asset.name}`;
                     }
-                    
+
                     return "assets/[name]-[hash][extname]";
-                }
+                },
                 // manualChunks: {
                 //     verdor: vendorChunk,
                 //     ...splitChunks,
