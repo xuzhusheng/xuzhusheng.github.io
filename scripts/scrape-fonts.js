@@ -16,7 +16,7 @@ const download = async url => {
     }
 }
 
-// fonts.map(url => download(url))
+fonts.map(url => download(url))
 
-// const css = googleFontsCss.replaceAll("https://fonts.gstatic.com/s", "./assets/fonts");
-// fs.writeFileSync("./src/fonts.css", css, {encoding: "utf8"})
+const css = googleFontsCss.replaceAll("https://fonts.gstatic.com/s", "./assets/fonts");
+fs.writeFileSync("./src/fonts.css", css, {encoding: "utf8"})
