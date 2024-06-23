@@ -1,5 +1,5 @@
 // import SocialMedia from "/src/conponents/social-media/SocialMedia.jsx";
-import Skills from "/src/conponents/skills/Skills.jsx";
+// import Skills from "/src/conponents/skills/Skills.jsx";
 // import Experience from "/src/conponents/experience/Experiences.jsx";
 // import Projects from "/src/conponents/projects/Projects.jsx";
 import Button from "/src/conponents/button/Button.jsx";
@@ -7,6 +7,7 @@ import "./Home.css";
 import LazyLottie from "../../conponents/lazy-lottie/LazyLottie";
 import { Suspense, lazy } from "react";
 
+const Skills = lazy(() => import("/src/conponents/skills/Skills.jsx"));
 const SocialMedia = lazy(() =>
     import("/src/conponents/social-media/SocialMedia.jsx")
 );

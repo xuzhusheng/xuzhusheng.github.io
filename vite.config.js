@@ -29,7 +29,10 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 assetFileNames: (asset) => {
-                    if (asset.name.endsWith(".ttf") || asset.name.endsWith(".woff2")) {
+                    if (
+                        asset.name.endsWith(".ttf") ||
+                        asset.name.endsWith(".woff2")
+                    ) {
                         return `assets/fonts/${asset.name}`;
                     }
 
