@@ -11,9 +11,10 @@ import SEO from "./conponents/seo/SEO";
 import { SEO_META_DATA } from "./portfolio";
 import { lazy } from "react";
 
-
 const Blogs = lazy(() => import("./pages/blogs/Blogs"));
-const Resume = lazy(() => import("./pages/resume/Resume"));
+// const Resume = lazy(() => import("./pages/resume/Resume"));
+const loadResume = import("./pages/resume/Resume");
+const Resume = lazy(() => loadResume);
 const Contact = lazy(() => import("./pages/contact/Contact"));
 
 export default function App() {
@@ -55,11 +56,12 @@ export default function App() {
 
     return (
         <HelmetProvider>
+            {/* <Preload /> */}
             <SEO {...SEO_META_DATA} />
             <ThemeContext.Provider value={{ theme, setTheme }}>
                 <div data-theme={theme}>
                     {/* <Suspense> */}
-                        <RouterProvider router={router}></RouterProvider>
+                    <RouterProvider router={router}></RouterProvider>
                     {/* </Suspense> */}
                 </div>
             </ThemeContext.Provider>
