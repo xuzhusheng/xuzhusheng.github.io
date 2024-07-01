@@ -6,9 +6,13 @@
     align-items: center;
 }
 
-    #blog-card .subtitle {
-        display: none;
-    }
+#blogs h2 {
+    text-align: center;
+}
+
+#blog-card .subtitle {
+    display: none;
+}
 
 #blog-card:hover {
     cursor: pointer;
