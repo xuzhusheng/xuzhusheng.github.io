@@ -1,19 +1,15 @@
 import "./Resume.css";
-import { pdfjs } from "react-pdf";
+// import { pdfjs } from "react-pdf";
 import { Document, Page } from "react-pdf";
 import { Suspense, useState } from "react";
 import "react-pdf/dist/Page/TextLayer.css";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import Button from "../../conponents/button/Button";
+// import Worker from "pdfjs-dist/build/pdf.worker.min.js";
+import pdf from "./xu-zhusheng.pdf";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-    "pdfjs-dist/build/pdf.worker.min.js",
-    import.meta.url
-).toString();
-
-const RESUME_URL = "/xu-zhusheng.pdf";
-
-export default function Resume() {
+// eslint-disable-next-line react/prop-types
+export default function Resume({worker}) {
     const [numOfPages, setNumOfPages] = useState(0);
     const [loadedPage, setLoadedPage] = useState(0);
 
@@ -38,11 +34,15 @@ export default function Resume() {
 
     return (
         <div id="resume">
-            <Button text="Download Resume" href={RESUME_URL} download />
-            <Document file={RESUME_URL} onLoadSuccess={onDocumentLoadSuccess}>
+            <Button text="Download Resume" href={pdf} download />
+            <Document
+                file={pdf}
+                onLoadSuccess={onDocumentLoadSuccess}
+                workerSrc={worker}
+            >
                 <Suspense>{pages}</Suspense>
             </Document>
-            <Button text="Download Resume" href={RESUME_URL} download />
+            <Button text="Download Resume" href={pdf} download />
         </div>
     );
 }

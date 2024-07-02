@@ -25,19 +25,16 @@ export default function Home() {
             <div className="section container">
                 <div className="section content">
                     <div id="greeting">
-                        <div>
-                            <h1>Xu Zhusheng</h1>
-                            <p>
-                                A passionate software engineer having
-                                experiences of building applications with
-                                Python, Java, JavaScript.
-                            </p>
-                        </div>
+                        <h1>Xu Zhusheng</h1>
+                        <p>
+                            A passionate software engineer having experiences of
+                            building applications with Python, Java, JavaScript.
+                        </p>
 
                         <SocialMedia />
                         <div className="button-div">
                             <Button text="Contact Me" href="/contact" />
-                            <Button text="See My Resume" href={"/resume"} />
+                            <Button text="See My Resume" href="/resume" />
                         </div>
                     </div>
                     <div>

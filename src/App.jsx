@@ -15,6 +15,7 @@ const Blogs = lazy(() => import("./pages/blogs/Blogs"));
 // const Resume = lazy(() => import("./pages/resume/Resume"));
 const loadResume = import("./pages/resume/Resume");
 const Resume = lazy(() => loadResume);
+const pdfjsWorker = import("pdfjs-dist/build/pdf.worker.min.js");
 const Contact = lazy(() => import("./pages/contact/Contact"));
 
 export default function App() {
@@ -43,7 +44,7 @@ export default function App() {
                 },
                 {
                     path: "/resume",
-                    element: <Resume />,
+                    element: <Resume wroker={pdfjsWorker}/>,
                 },
 
                 {
