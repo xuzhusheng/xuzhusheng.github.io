@@ -4,16 +4,14 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 // import { dependencies } from "./package.json";
 import { visualizer } from "rollup-plugin-visualizer";
 
-// const VENDOR_CHUNKS_PACKAGES = [
-//     "react",
-//     "react-router-dom",
-//     "react-dom",
-//     "react-helmet-async",
-// ];
+const chunks = ["react", "react-dom", "react-router-dom"].reduce(
+    (chunks, key) => {
+        chunks[key] = [key];
+        return chunks;
+    },
+    {}
+);
 
-// const vendorChunk = Object.keys(dependencies).filter((key) =>
-//     VENDOR_CHUNKS_PACKAGES.includes(key)
-// );
 
 // const splitChunks = Object.keys(dependencies)
 //     .filter((key) => !VENDOR_CHUNKS_PACKAGES.includes(key))
@@ -38,10 +36,11 @@ export default defineConfig({
 
                     return "assets/[name]-[hash][extname]";
                 },
-                // manualChunks: {
-                //     verdor: vendorChunk,
-                //     ...splitChunks,
-                // },
+                manualChunks: {
+                    ...chunks
+                    // react: ["react", "react-dom"],
+                    // "react-router": ["react-router-dom"],
+                },
             },
         },
     },
