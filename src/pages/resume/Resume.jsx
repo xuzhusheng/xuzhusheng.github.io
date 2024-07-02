@@ -34,7 +34,11 @@ export default function Resume({worker}) {
 
     return (
         <div id="resume">
-            <Button text="Download Resume" href={pdf} download />
+            <Button
+                text="Download Resume"
+                href={pdf}
+                download="Resume-xuzhusheng.pdf"
+            />
             <Document
                 file={pdf}
                 onLoadSuccess={onDocumentLoadSuccess}
@@ -42,7 +46,11 @@ export default function Resume({worker}) {
             >
                 <Suspense>{pages}</Suspense>
             </Document>
-            <Button text="Download Resume" href={pdf} download />
+            <Button
+                text="Download Resume"
+                href={pdf}
+                download="Resume-xuzhusheng.pdf"
+            />
         </div>
     );
 }
