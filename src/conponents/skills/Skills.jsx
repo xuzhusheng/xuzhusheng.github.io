@@ -27,7 +27,7 @@ export default function Skills() {
             <div className="section content">
                 <ul className="skill-section">{SkillSections}</ul>
                 <div>
-                    <LazyLottie animationUrl={LOTTIE_URL} />
+                    <LazyLottie lottieId="skills-lottie" animationUrl={LOTTIE_URL} />
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div>
-                        <LazyLottie animationUrl={LOTTIE_URL} />
+                        <LazyLottie lottieId="greeting-lottie" animationUrl={LOTTIE_URL} />
                     </div>
                 </div>
             </div>

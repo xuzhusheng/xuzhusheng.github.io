@@ -1,24 +1,37 @@
-import { Suspense, lazy, useEffect, useState } from "react";
-// import Lottie from "lottie-react";
-
-const Lottie = lazy(() => import("lottie-react"));
+import { useEffect, useRef } from "react";
 
 // eslint-disable-next-line react/prop-types
-export default function LazyLottie({ animationUrl }) {
-    const [data, setData] = useState(null);
+export default function LazyLottie({ lottieId, animationUrl }) {
+    const loaded = useRef(false)
 
     useEffect(() => {
+        let animation = null;
+
         (async () => {
-            const response = await fetch(animationUrl);
-            setData(await response.json());
+            if (loaded.current) return;
+            loaded.current = true;
+            const lottieModule = import(
+                "lottie-web/build/player/lottie_light"
+            ).then((module) => module);
+            const responseData = fetch(animationUrl).then(respons => respons.json())
+            const [lottie, animationData] = await Promise.all([lottieModule, responseData]);
+            animation = lottie.loadAnimation({
+                container: document.querySelector(`#${lottieId}`),
+                // path: animationUrl,
+                animationData: animationData,
+                renderer: "svg",
+                loop: true, // boolean
+                autoplay: true, // boolean
+                rendererSettings: {
+                    progressiveLoad: true,
+                },
+            });
         })();
-    }, [animationUrl]);
+
+        return () => animation && animation.destroy();
+    }, [lottieId, animationUrl]);
 
     return (
-        data && (
-            <Suspense>
-                <Lottie animationData={data} loop={true} />
-            </Suspense>
-        )
+        <div id={lottieId}></div>
     );
 }
