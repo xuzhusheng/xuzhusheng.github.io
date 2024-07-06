@@ -36,11 +36,9 @@ export default defineConfig({
 
                     return "assets/[name]-[hash][extname]";
                 },
-                manualChunks: {
-                    ...chunks
-                    // react: ["react", "react-dom"],
-                    // "react-router": ["react-router-dom"],
-                },
+                // manualChunks: {
+                //     ...chunks
+                // },
             },
         },
     },

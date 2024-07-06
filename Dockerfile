@@ -20,3 +20,11 @@ RUN mkdir -p /var/www/app
 COPY --from=build /app/dist /var/www/app
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
+
+FROM base as subfont
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | tee /etc/apt/trusted.gpg.d/google.asc >/dev/null
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' 
+RUN apt-get update && apt-get upgrade && apt-get install -y python3 python3-pip google-chrome-stable libxss1 --no-install-recommends 
+RUN pip install fonttools brotli zopfli --break-system-packages 
+RUN npm install -g glyphhanger
+user node

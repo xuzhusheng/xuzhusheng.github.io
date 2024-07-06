@@ -1,0 +1,4 @@
+# glyphhanger ./scripts/font-text/monsieur-la-doulaise.txt
+pyftsubset /app/src/assets/fonts/MonsieurLaDoulaise-Regular.woff2 --flavor=woff2 --unicodes="U+20,U+58,U+5A,U+65,U+67,U+68,U+6E,U+73,U+75" --output-file="/app/src/assets/fonts/subset/MonsieurLaDoulaise-Regular-subset.woff2"
+pyftsubset /app/src/assets/fonts/PlayfairDisplay-VariableFont_wght.woff2 --flavor=woff2 --unicodes="U+A,U+20,U+42,U+43,U+48,U+4D,U+52,U+58,U+5A,U+61,U+63,U+65,U+67,U+68,U+6C-6F,U+73-75" --output-file="/app/src/assets/fonts/subset/PlayfairDisplay-VariableFont_wght-subset.woff2"
+pyftsubset /app/src/assets/fonts/OpenSans-VariableFont_wdth,wght.woff2 --flavor=woff2 --unicodes="U+A,U+20,U+2C,U+2E,U+41,U+43,U+4A,U+4D,U+50,U+52,U+53,U+58,U+5A,U+61-69,U+6C-70,U+72-79" --output-file="/app/src/assets/fonts/subset/OpenSans-VariableFont_wdth,wght-subset.woff2"

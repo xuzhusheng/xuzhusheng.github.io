@@ -24,7 +24,6 @@ const socialMediaLinks = SOCIAL_MEDIAS.map((media, key) => (
         rel="noopener noreferrer"
     >
         <i className={media.icon}></i>
-        <span></span>
     </a>
 ));
 

@@ -28,3 +28,12 @@ services:
             - ./prod.conf:/etc/nginx/conf.d/prod.conf
         ports:
             - 80:80
+
+    subfont:
+        build:
+            context: .
+            target: subfont
+        volumes:
+            - .:/app
+            - /app/node_modules
+        tty: true

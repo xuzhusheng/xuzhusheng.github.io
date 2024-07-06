@@ -56,7 +56,8 @@
 /* menu */
 
 .menu {
-    font-family: "Google Sans Regular";
+    /* font-family: "Google Sans Regular"; */
+    font-family: "Playfair Display", serif;
     background-color: var(--body);
 }
 
