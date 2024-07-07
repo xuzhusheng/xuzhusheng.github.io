@@ -1,8 +1,9 @@
 import { useEffect, useRef } from "react";
 
 // eslint-disable-next-line react/prop-types
-export default function LazyLottie({ lottieId, animationUrl }) {
+export default function LazyLottie({ animationUrl }) {
     const loaded = useRef(false)
+    const container = useRef(null)
 
     useEffect(() => {
         let animation = null;
@@ -16,7 +17,7 @@ export default function LazyLottie({ lottieId, animationUrl }) {
             const responseData = fetch(animationUrl).then(respons => respons.json())
             const [lottie, animationData] = await Promise.all([lottieModule, responseData]);
             animation = lottie.loadAnimation({
-                container: document.querySelector(`#${lottieId}`),
+                container: container.current,
                 // path: animationUrl,
                 animationData: animationData,
                 renderer: "svg",
@@ -29,9 +30,7 @@ export default function LazyLottie({ lottieId, animationUrl }) {
         })();
 
         return () => animation && animation.destroy();
-    }, [lottieId, animationUrl]);
+    }, [animationUrl]);
 
-    return (
-        <div id={lottieId}></div>
-    );
+    return <div ref={container}></div>;
 }

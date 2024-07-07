@@ -51,19 +51,22 @@ export default function Resume() {
                 download="Resume-xuzhusheng.pdf"
             />
             <Suspense>
-                {worker && <Document
-                    file={pdfData}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    worker={worker}
-                >
-                    <Suspense>{pages}</Suspense>
-                </Document>}
+                {worker && (
+                    <Document
+                        file={pdfData}
+                        onLoadSuccess={onDocumentLoadSuccess}
+                        worker={worker}
+                    >
+                        <Suspense>{pages}</Suspense>
+                    </Document>
+                )}
             </Suspense>
             <Button
                 text="Download Resume"
                 href={pdf}
                 download="Resume-xuzhusheng.pdf"
             />
+            <p />
         </div>
     );
 }

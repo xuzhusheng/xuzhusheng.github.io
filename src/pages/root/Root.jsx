@@ -14,7 +14,6 @@ export default function Root() {
                     <Outlet />
                 </Suspense>
             </div>
-            <div className="footer">Made by Xu Zhusheng</div>
         </>
     );
 }
