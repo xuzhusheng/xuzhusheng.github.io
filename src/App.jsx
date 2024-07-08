@@ -18,16 +18,14 @@ export default function App() {
     const [theme, setTheme] = useLocalStorage("theme", preferredTheme);
 
     return (
-        <>
+        <HelmetProvider>
             <ThemeContext.Provider value={{ theme, setTheme }}>
                 <div data-theme={theme}>
                     <Router />
                     <div className="footer">Made by Xu Zhusheng</div>
                 </div>
             </ThemeContext.Provider>
-            <HelmetProvider>
-                <SEO {...SEO_META_DATA} />
-            </HelmetProvider>
-        </>
+            <SEO {...SEO_META_DATA} />
+        </HelmetProvider>
     );
 }
