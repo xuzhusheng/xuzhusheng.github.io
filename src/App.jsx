@@ -3,7 +3,7 @@ import "./App.css";
 
 import { ThemeContext } from "./contexts";
 
-import useLocalStorage from "./useLocalStorage";
+import useLocalStorage from "./hooks/useLocalStorage";
 // import "./i18n";
 import { HelmetProvider } from "react-helmet-async";
 import SEO from "./conponents/seo/SEO";

@@ -1,16 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Experiences.css";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 const jobDesc = ( desc ) => desc.map((item, key) => <li key={key}>{item}</li>)
 
 export default function Experience() {
+        const ref = useRef(null);
+        const inView = useIntersectionObserver(ref, {
+            rootMargin: "50%",
+        });
+
     const [workExperiences, setWorkExperiences] = useState([])
     useEffect(() => {
+        if (!inView) return;
+
         (async () => {
             const response = await fetch("/experiences.json");
             setWorkExperiences(await response.json());
         })();
-    },[])
+    },[inView])
 
     const experienceCard = workExperiences.map((job, key) => (
         <li key={key} className="experience section content">
@@ -29,9 +37,9 @@ export default function Experience() {
     ));
 
     return (
-        <div className="section container">
+        <div className="section container" ref={ref}>
             <h2>Work Experiences</h2>
-            <ul className="experience-container">{experienceCard}</ul>
+            {inView && <ul className="experience-container">{experienceCard}</ul>}
         </div>
     )
 }

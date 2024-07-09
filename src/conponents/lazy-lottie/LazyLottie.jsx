@@ -1,21 +1,30 @@
 import { useEffect, useRef } from "react";
+import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 
 // eslint-disable-next-line react/prop-types
 export default function LazyLottie({ animationUrl }) {
     const loaded = useRef(false)
     const container = useRef(null)
+    const startLoad = useIntersectionObserver(container, {
+        rootMargin: "50%",
+    });
 
     useEffect(() => {
         let animation = null;
 
         (async () => {
-            if (loaded.current) return;
+            if (!startLoad || loaded.current) return;
             loaded.current = true;
             const lottieModule = import(
                 "lottie-web/build/player/lottie_light"
             ).then((module) => module);
-            const responseData = fetch(animationUrl).then(respons => respons.json())
-            const [lottie, animationData] = await Promise.all([lottieModule, responseData]);
+            const responseData = fetch(animationUrl).then((respons) =>
+                respons.json()
+            );
+            const [lottie, animationData] = await Promise.all([
+                lottieModule,
+                responseData,
+            ]);
             animation = lottie.loadAnimation({
                 container: container.current,
                 // path: animationUrl,
@@ -30,7 +39,7 @@ export default function LazyLottie({ animationUrl }) {
         })();
 
         return () => animation && animation.destroy();
-    }, [animationUrl]);
+    }, [startLoad, animationUrl]);
 
     return <div ref={container}></div>;
 }
