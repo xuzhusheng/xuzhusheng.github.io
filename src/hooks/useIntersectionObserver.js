@@ -11,9 +11,6 @@ export default function useIntersectionObserver(
         const observer = new IntersectionObserver(([entry]) => {
             setIntersecting(entry.isIntersecting);
             if (triggerOnce && entry.isIntersecting) {
-                console.debug("start loading")
-                console.debug(entry.rootBounds)
-                console.debug(entry.boundingClientRect)
                 observer.disconnect();
             }
         }, options);
