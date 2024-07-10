@@ -42,7 +42,7 @@ export default function PdfViewer({ loadWorker, pdf }) {
     }, [loadWorker, pdf]);
     return (
         <>
-            {!worker && <p>Loading Resume...</p>}
+            {(!worker || !pdfData) && <p>Loading Resume...</p>}
 
             {worker && pdfData && (
                 <Document
