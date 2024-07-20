@@ -4,13 +4,13 @@ import { viteStaticCopy } from "vite-plugin-static-copy";
 // import { dependencies } from "./package.json";
 import { visualizer } from "rollup-plugin-visualizer";
 
-const chunks = ["react", "react-dom", "react-router-dom"].reduce(
-    (chunks, key) => {
-        chunks[key] = [key];
-        return chunks;
-    },
-    {}
-);
+// const chunks = ["react", "react-dom", "react-router-dom"].reduce(
+//     (chunks, key) => {
+//         chunks[key] = [key];
+//         return chunks;
+//     },
+//     {}
+// );
 
 
 // const splitChunks = Object.keys(dependencies)

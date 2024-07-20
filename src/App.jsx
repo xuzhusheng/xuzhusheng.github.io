@@ -6,9 +6,9 @@ import { ThemeContext } from "./contexts";
 import useLocalStorage from "./hooks/useLocalStorage";
 // import "./i18n";
 import { HelmetProvider } from "react-helmet-async";
-import SEO from "./conponents/seo/SEO";
+import SEO from "./components/seo/SEO";
 import { SEO_META_DATA } from "./portfolio";
-import Router from "./conponents/router/Router";
+import Router from "./components/router/Router";
 
 export default function App() {
     const preferredTheme = matchMedia("(prefers-color-scheme: dark)").matches

@@ -1,6 +1,6 @@
 import "./Resume.css";
 import { lazy, Suspense } from "react";
-import Button from "../../conponents/button/Button";
+import Button from "../../components/button/Button";
 import pdf from "./xu-zhusheng.pdf";
 
 const PdfViewer = lazy(() => import("./PdfViewer"));

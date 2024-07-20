@@ -1,20 +1,20 @@
-// import SocialMedia from "/src/conponents/social-media/SocialMedia.jsx";
-// import Skills from "/src/conponents/skills/Skills.jsx";
-// import Experience from "/src/conponents/experience/Experiences.jsx";
-// import Projects from "/src/conponents/projects/Projects.jsx";
-import Button from "/src/conponents/button/Button.jsx";
+// import SocialMedia from "/src/components/social-media/SocialMedia.jsx";
+// import Skills from "/src/components/skills/Skills.jsx";
+// import Experience from "/src/components/experience/Experiences.jsx";
+// import Projects from "/src/components/projects/Projects.jsx";
+import Button from "/src/components/button/Button.jsx";
 import "./Home.css";
-import LazyLottie from "../../conponents/lazy-lottie/LazyLottie";
+import LazyLottie from "../../components/lazy-lottie/LazyLottie";
 import { Suspense, lazy } from "react";
 
-const Skills = lazy(() => import("/src/conponents/skills/Skills.jsx"));
+const Skills = lazy(() => import("/src/components/skills/Skills.jsx"));
 const SocialMedia = lazy(() =>
-    import("/src/conponents/social-media/SocialMedia.jsx")
+    import("/src/components/social-media/SocialMedia.jsx")
 );
 
-const Projects = lazy(() => import("/src/conponents/projects/Projects.jsx"));
+const Projects = lazy(() => import("/src/components/projects/Projects.jsx"));
 const Experience = lazy(() =>
-    import("/src/conponents/experience/Experiences.jsx")
+    import("/src/components/experience/Experiences.jsx")
 );
 
 const LOTTIE_URL = "/assets/lotties/greeting-lottie.json";
