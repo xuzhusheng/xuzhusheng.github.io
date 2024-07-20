@@ -27,6 +27,22 @@ export default function Projects() {
         })();
     }, [inView]);
 
+    
+    const languages = (edges) => {
+        const nodes = edges.sort((a, b) => a.size - b.size).slice(-3).map(edge => edge.node);
+        return nodes.map((node) => (
+            <span className="language" key={node.name}>
+                <span
+                    className="language-color"
+                    style={{
+                        backgroundColor: node.color,
+                    }}
+                />
+                {node.name}
+            </span>
+        ));
+    }
+
     const repositoriesCard = repositories.map((repo) => {
         const node = repo.node;
         return (
@@ -48,7 +64,8 @@ export default function Projects() {
                         {node.stargazers.totalCount}
                     </span>
 
-                    <span className="language">
+                    {languages(node.languages.edges)}
+                    {/* <span className="language">
                         <span
                             className="language-color"
                             style={{
@@ -56,7 +73,7 @@ export default function Projects() {
                             }}
                         />
                         {node.primaryLanguage.name}
-                    </span>
+                    </span> */}
                 </div>
             </div>
         );

@@ -57,11 +57,14 @@ const updateProfile = () => {
                 color
               }
               languages(first:10){
-		            nodes{
-                  name
-                  color
+                edges {
+                  size
+                  node {
+                      name
+                      color
+                  }
                 }
-		          }
+		      }
             }
           }
         }
