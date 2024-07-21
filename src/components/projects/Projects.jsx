@@ -3,6 +3,7 @@ import "./Projects.css";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import { config, library, dom } from "@fortawesome/fontawesome-svg-core";
 import { faCodeFork, faStar } from "@fortawesome/free-solid-svg-icons";
+import { GITHUB_PROFILE } from "../../urls";
 
 config.autoReplaceSvg = "nest";
 
@@ -21,7 +22,7 @@ export default function Projects() {
     useEffect(() => {
         if (!inView) return;
         (async () => {
-            const response = await fetch("/profile.json");
+            const response = await fetch(GITHUB_PROFILE);
             const profile = await response.json();
             setRepositories(profile.data.user.pinnedItems.edges);
         })();

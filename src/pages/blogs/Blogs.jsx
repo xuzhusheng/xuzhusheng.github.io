@@ -1,5 +1,6 @@
 import "./Blogs.css";
 import { useEffect, useState } from "react";
+import { BLOGS_URL } from "../../urls";
 
 const openURL = (url) =>
     window.open(url, "_blank", "noopener,noreferrer");
@@ -9,7 +10,7 @@ export default function Blogs() {
 
     useEffect(() => {
         (async () => {
-            const response = await fetch("/blogs.json");
+            const response = await fetch(BLOGS_URL);
             const blogs = await response.json();
             setBlogs(blogs.items);
         })();

@@ -25,6 +25,6 @@ dist-ssr
 
 .env
 
-public/profile.json
-public/blogs.json
+public/profile.*.json
+public/blogs.*.json
 stats.html
