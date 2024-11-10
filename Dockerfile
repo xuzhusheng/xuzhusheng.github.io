@@ -27,4 +27,4 @@ RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable 
 RUN apt-get update && apt-get upgrade && apt-get install -y python3 python3-pip google-chrome-stable libxss1 --no-install-recommends 
 RUN pip install fonttools brotli zopfli --break-system-packages 
 RUN npm install -g glyphhanger
-user node
+USER node
