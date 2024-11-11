@@ -20,7 +20,7 @@ const PROFILE_SKILLS = [
             { name: "ReactJS", icon: "logos:react" },
             // { name: "React Router", icon: "logos:react-router" },
             { name: "Vue.js", icon: "logos:vue" },
-            { name: "Playwrght", icon: "logos:playwright" },
+            { name: "Playwright", icon: "logos:playwright" },
         ],
     },
     {
