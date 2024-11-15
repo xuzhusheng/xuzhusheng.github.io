@@ -13,9 +13,9 @@ const SocialMedia = lazy(() =>
 );
 
 const Projects = lazy(() => import("/src/components/projects/Projects.jsx"));
-const Experience = lazy(() =>
-    import("/src/components/experience/Experiences.jsx")
-);
+// const Experience = lazy(() =>
+//     import("/src/components/experience/Experiences.jsx")
+// );
 import GreetingLottie from "/src/assets/lotties/greeting-lottie.json?url";
 
 export default function Home() {

@@ -20,6 +20,7 @@ const socialMediaLinks = SOCIAL_MEDIAS.map((media, key) => (
         key={key}
         href={media.link}
         className={"icon-button " + media.name}
+        aria-label={media.name + " link"}
         target="_blank"
         rel="noopener noreferrer"
     >
