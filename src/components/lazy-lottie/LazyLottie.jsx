@@ -18,7 +18,7 @@ export default function LazyLottie({ animationUrl }) {
             // lottie_worker does not work on product mode
             const lottie = await import(
                 "lottie-web/build/player/lottie_light"
-            ).then((module) => module);
+            );
             animation = lottie.loadAnimation({
                 container: container.current,
                 path: animationUrl,
