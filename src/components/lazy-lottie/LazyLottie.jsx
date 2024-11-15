@@ -16,7 +16,7 @@ export default function LazyLottie({ animationUrl }) {
             if (!startLoad || loaded.current) return;
             loaded.current = true;
             const lottieModule = import(
-                "lottie-web/build/player/lottie_light"
+                "lottie-web/build/player/lottie_worker"
             ).then((module) => module);
             const responseData = fetch(animationUrl).then((respons) =>
                 respons.json()
