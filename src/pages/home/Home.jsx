@@ -45,7 +45,7 @@ export default function Home() {
             <Suspense>
                 <Skills />
                 <Projects />
-                <Experience />
+                {/* <Experience /> */}
             </Suspense>
         </>
     );
