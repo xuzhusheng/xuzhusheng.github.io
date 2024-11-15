@@ -19,19 +19,17 @@ export default function LazyLottie({ animationUrl }) {
             const lottie = await import(
                 "lottie-web/build/player/lottie_light"
             ).then((module) => module);
-            setTimeout(() => {
-                animation = lottie.loadAnimation({
-                    container: container.current,
-                    path: animationUrl,
-                    // animationData: animationData,
-                    renderer: "svg",
-                    loop: true, // boolean
-                    autoplay: true, // boolean
-                    rendererSettings: {
-                        progressiveLoad: true,
-                    },
-                });
-            }, 0)
+            animation = lottie.loadAnimation({
+                container: container.current,
+                path: animationUrl,
+                // animationData: animationData,
+                renderer: "svg",
+                loop: true, // boolean
+                autoplay: true, // boolean
+                rendererSettings: {
+                    progressiveLoad: true,
+                },
+            });
         })();
 
         return () => animation && animation.destroy();
