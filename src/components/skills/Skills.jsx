@@ -2,8 +2,7 @@ import "./Skills.css";
 import { Icon } from "@iconify/react";
 import { PROFILE_SKILLS } from "../../portfolio";
 import LazyLottie from "../lazy-lottie/LazyLottie";
-
-const LOTTIE_URL = "/assets/lotties/skills-lottie.json"
+import SkillsLottie from "/src/assets/lotties/skills-lottie.json?url";
 
 const skillIcons = (skills) =>
     skills.map((skill, key) => (
@@ -27,7 +26,7 @@ export default function Skills() {
             <div className="section content">
                 <ul className="skill-section">{SkillSections}</ul>
                 <div>
-                    <LazyLottie animationUrl={LOTTIE_URL} />
+                    <LazyLottie animationUrl={SkillsLottie} />
                 </div>
             </div>
         </div>

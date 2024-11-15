@@ -15,20 +15,13 @@ export default function LazyLottie({ animationUrl }) {
         (async () => {
             if (!startLoad || loaded.current) return;
             loaded.current = true;
-            const lottieModule = import(
+            const lottie = await import(
                 "lottie-web/build/player/lottie_worker"
             ).then((module) => module);
-            const responseData = fetch(animationUrl).then((respons) =>
-                respons.json()
-            );
-            const [lottie, animationData] = await Promise.all([
-                lottieModule,
-                responseData,
-            ]);
             animation = lottie.loadAnimation({
                 container: container.current,
-                // path: animationUrl,
-                animationData: animationData,
+                path: animationUrl,
+                // animationData: animationData,
                 renderer: "svg",
                 loop: true, // boolean
                 autoplay: true, // boolean

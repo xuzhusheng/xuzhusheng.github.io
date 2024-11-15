@@ -16,8 +16,7 @@ const Projects = lazy(() => import("/src/components/projects/Projects.jsx"));
 const Experience = lazy(() =>
     import("/src/components/experience/Experiences.jsx")
 );
-
-const LOTTIE_URL = "/assets/lotties/greeting-lottie.json";
+import GreetingLottie from "/src/assets/lotties/greeting-lottie.json?url";
 
 export default function Home() {
     return (
@@ -38,7 +37,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div>
-                        <LazyLottie animationUrl={LOTTIE_URL} />
+                        <LazyLottie animationUrl={GreetingLottie} />
                     </div>
                 </div>
             </div>
