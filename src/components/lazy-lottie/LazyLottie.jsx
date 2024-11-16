@@ -16,9 +16,10 @@ export default function LazyLottie({ animationUrl }) {
             if (!startLoad || loaded.current) return;
             loaded.current = true;
             // lottie_worker does not work on product mode
-            const lottie = await import(
-                "lottie-web/build/player/lottie_light"
-            );
+            // const lottie = await import(
+            //     "lottie-web/build/player/lottie_canvas_worker.js"
+            // );
+            // eslint-disable-next-line no-undef
             animation = lottie.loadAnimation({
                 container: container.current,
                 path: animationUrl,
