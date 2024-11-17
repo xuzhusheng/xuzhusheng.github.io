@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
+import useScript from "../../hooks/useScript";
 
 // eslint-disable-next-line react/prop-types
 export default function LazyLottie({ animationUrl }) {
@@ -9,7 +10,14 @@ export default function LazyLottie({ animationUrl }) {
         rootMargin: "50%",
     });
 
+    const scriptLoaded = useScript(
+        "/lottie_worker.min.js",
+        "sha512-laz0XjFdhz5WXsqp5yJfK2mh7qX35DUW5bVNkbxSyP0GFkoNVcKqN4760GsW5VHPv0QWNQcVasia5wDFpx03Lg=="
+    );
+
     useEffect(() => {
+        if (!scriptLoaded) return;
+
         let animation = null;
 
         (async () => {
@@ -34,7 +42,7 @@ export default function LazyLottie({ animationUrl }) {
         })();
 
         return () => animation && animation.destroy();
-    }, [startLoad, animationUrl]);
+    }, [scriptLoaded, startLoad, animationUrl]);
 
     return <div ref={container}></div>;
 }
