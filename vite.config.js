@@ -63,12 +63,12 @@ export default defineConfig({
         watch: {
             usePolling: true,
         },
-        proxy: {
-            "/assets": {
-                target: "http://localhost:5173",
-                changeOrigin: true,
-                rewrite: (path) => path.replace("/assets", "/src/assets"),
-            },
-        },
+        // proxy: {
+        //     "/assets": {
+        //         target: "http://localhost:5173",
+        //         changeOrigin: true,
+        //         rewrite: (path) => path.replace("/assets", "/src/assets"),
+        //     },
+        // },
     },
 });
