@@ -22,7 +22,7 @@ export default function Home() {
     return (
         <>
             <div className="section container">
-                <div className="section content">
+                <div className="section content greeting-container">
                     <div id="greeting">
                         <h1>Xu Zhusheng</h1>
                         <p>
@@ -36,9 +36,8 @@ export default function Home() {
                             <Button text="See My Resume" href="/resume" />
                         </div>
                     </div>
-                    <div>
-                        <LazyLottie animationUrl={GreetingLottie} />
-                    </div>
+                    <LazyLottie animationUrl={GreetingLottie} />
+
                 </div>
             </div>
 

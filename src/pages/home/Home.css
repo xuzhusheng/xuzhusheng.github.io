@@ -4,3 +4,7 @@
     padding: 1rem;
     justify-content: center;
 }
+
+.greeting-container {
+    align-items: end !important;
+}

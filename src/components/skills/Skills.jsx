@@ -2,7 +2,6 @@ import "./Skills.css";
 import { Icon } from "@iconify/react";
 import { PROFILE_SKILLS } from "../../portfolio";
 import LazyLottie from "../lazy-lottie/LazyLottie";
-import SkillsLottie from "/src/assets/lotties/skills-lottie.json?url";
 
 const skillIcons = (skills) =>
     skills.map((skill, key) => (
@@ -12,23 +11,38 @@ const skillIcons = (skills) =>
         </li>
     ));
 
-const SkillSections = PROFILE_SKILLS.map((section, key) => (
-    <li key={key}>
-        <h3>{section.title}</h3>
-        <ul className="skills-list">{skillIcons(section.skills)}</ul>
-    </li>
+const skillDesc = (desc) => 
+    desc.map((item, key) => (<li key={key}>{item}</li>));
+
+// const SkillSections = PROFILE_SKILLS.map((section, key) => (
+//     <li key={key}>
+//         <h3>{section.title}</h3>
+//         <ul className="skills-list">{skillIcons(section.skills)}</ul>
+//     </li>
+// ));
+
+const sections = PROFILE_SKILLS.map((section, key) => (
+    <div key={key} className="section content skill-section-container">
+        <div className="skill-section">
+            <h3>{section.title}</h3>
+            <ul className="skills-list">{skillIcons(section.skills)}</ul>
+            <ul className="skill-desc">{skillDesc(section.desc)}</ul>
+        </div>
+        <LazyLottie animationUrl={section.lottie} />
+    </div>
 ));
 
 export default function Skills() {
     return (
         <div id="skills" className="section container">
             <h2>What I do?</h2>
-            <div className="section content">
+            {sections}
+            {/* <div className="section content">
                 <ul className="skill-section">{SkillSections}</ul>
                 <div>
                     <LazyLottie animationUrl={SkillsLottie} />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

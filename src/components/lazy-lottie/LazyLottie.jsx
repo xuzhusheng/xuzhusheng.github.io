@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import useIntersectionObserver from "../../hooks/useIntersectionObserver";
 import useScript from "../../hooks/useScript";
+import "./LazyLottie.css";
 
 // eslint-disable-next-line react/prop-types
 export default function LazyLottie({ animationUrl }) {
@@ -44,5 +45,5 @@ export default function LazyLottie({ animationUrl }) {
         return () => animation && animation.destroy();
     }, [scriptLoaded, startLoad, animationUrl]);
 
-    return <div ref={container}></div>;
+    return <div className="lottie" ref={container}></div>;
 }

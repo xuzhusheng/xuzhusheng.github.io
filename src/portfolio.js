@@ -1,3 +1,8 @@
+import AiLottie from "./assets/lotties/ai-lottie.json?url";
+import FullstackLottie from "./assets/lotties/fullstack-lottie.json?url";
+import ThreeDimension from "./assets/lotties/3d-lottie.json?url"
+import InfraLottie from "./assets/lotties/infra-lottie.json?url"
+
 const PROFILE_SKILLS = [
     {
         title: "Data Science & Machine Learning",
@@ -9,6 +14,11 @@ const PROFILE_SKILLS = [
             { name: "Scikit learn", icon: "devicon:scikitlearn" },
             { name: "Matplotlib", icon: "logos:matplotlib-icon" },
         ],
+        desc: [
+            "Developing machine learning models using PyTorch & Scikit learn",
+            "Processing data using Pandas & NumPy",
+        ],
+        lottie: AiLottie,
     },
     {
         title: "Full Stack Development",
@@ -22,6 +32,12 @@ const PROFILE_SKILLS = [
             { name: "Vue.js", icon: "logos:vue" },
             { name: "Playwright", icon: "logos:playwright" },
         ],
+        desc: [
+            "Building responsive website front end using ReactJs & Vue.js",
+            "Creating application backend using Java Spring & FastAPI",
+            "Testing and scraping webpage using Playwright",
+        ],
+        lottie: FullstackLottie,
     },
     {
         title: "3D Models Processing & Rendering",
@@ -33,6 +49,11 @@ const PROFILE_SKILLS = [
             { name: "glTF", icon: "file-icons:gltf", color: "#31c449" },
             { name: "3D Tiles", icon: "gis:3dtiles-file" },
         ],
+        desc: [
+            "Creating and converting 3D models in glTF & 3d Tiles",
+            "Rendering 3d models using Three.js",
+        ],
+        lottie: ThreeDimension,
     },
     {
         title: "Cloud Infra-Architecture",
@@ -46,6 +67,12 @@ const PROFILE_SKILLS = [
             { name: "Nginx", icon: "logos:nginx" },
             { name: "Docker", icon: "logos:docker-icon" },
         ],
+        desc: [
+            "Experience of working with multiple databases",
+            "Building distributed tasks process system by Celery",
+            "Manage development environment with Docker",
+        ],
+        lottie: InfraLottie,
     },
 ];
 
@@ -72,28 +99,6 @@ const SOCIAL_MEDIAS = [
     },
 ];
 
-
-    /* <script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  "name": "Jason Xuzhusheng",
-  "url": "localhost",
-  "image": "githubio.com/avator.png",
-  "sameAs": [
-    "linkedin.com/xuzhusheng",
-    "github.com/xuzhusheng",
-    "xuzhusheng.medium.com"
-  ],
-  "jobTitle": "Software Engineer",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "company"
-  }  
-}
-</script> */
-
-
 const SEO_META_DATA = {
     url: import.meta.env.VITE_HOST,
     title: "Xu Zhusheng | Portfolio",
@@ -108,8 +113,8 @@ const SEO_META_DATA = {
         "@type": "Person",
         name: "Xu Zhusheng",
         url: import.meta.env.VITE_HOST,
-        sameAs: SOCIAL_MEDIAS.flatMap((media) => media.link).filter((link) =>
-            !link.startsWith("mailto")
+        sameAs: SOCIAL_MEDIAS.flatMap((media) => media.link).filter(
+            (link) => !link.startsWith("mailto")
         ),
         jobTitle: "Software Engineer",
     },

@@ -3,13 +3,23 @@
     /* flex: 1; */
 }
 
+.skill-section-container {
+    margin: 4em 0 !important;
+}
+
 .skill-section {
     list-style: none;
     padding-left: 0;
-    text-align: center;
+    text-align: left;
     margin: 0;
 }
 
+.skill-desc {
+    text-align: left;
+    li {
+        list-style-type: "⚡  ";
+    }
+}
 /* .skill-section > li {
     margin-bottom: 0.5em;
 }
@@ -21,6 +31,7 @@
 .skills-list {
     padding-left: 0;
     list-style: none;
+    text-align: center;
 }
 
 .skills-list svg {
@@ -40,7 +51,7 @@
 }
 
 @media (min-width: 48em) {
-    .skill-section {
-        order: 2;
+    .skill-section-container:nth-child(even) {
+        flex-direction: row-reverse;
     }
 }
