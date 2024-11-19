@@ -103,7 +103,7 @@ const SEO_META_DATA = {
     url: import.meta.env.VITE_HOST,
     title: "Xu Zhusheng | Portfolio",
     description:
-        "Xu Zhusheng is a software engineer who is experienced Data Science & Machine Learning, Full Stack Development, 3D Models Processing & Rendering",
+        "Xu Zhusheng is a software engineer who is experienced in Data Science & Machine Learning, Full Stack Development, 3D Models Processing & Rendering",
     author: "Xu Zhusheng",
     keywords: PROFILE_SKILLS.flatMap((section) => section.skills).map(
         (skill) => skill.name

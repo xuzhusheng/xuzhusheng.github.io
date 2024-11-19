@@ -33,6 +33,8 @@ export default function SEO({
             <meta name="twitter:description" content={description} />
             {/* End Twitter tags */}
 
+            <link rel="canonical" href={url} />
+            
             <script type="application/ld+json">
                 {JSON.stringify(jsonSchema)}
             </script>
