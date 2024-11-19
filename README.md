@@ -7,7 +7,7 @@ Portfolio website to showcase my work and skills.
 [PageSpeed Insights](https://pagespeed.web.dev/analysis/https-xuzhusheng-github-io/ntrtvkqot5?form_factor=desktop)
 
 ### Desktop
-![PageSpeed Insights Desktop](imgs/pageSpeed-insights-desktop.png)
+![PageSpeed Insights Desktop](imgs/pagespeed-insights-desktop.png)
 
 
 ### Mobile
