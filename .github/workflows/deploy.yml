@@ -5,7 +5,7 @@ env:
     GITHUB_USERNAME: xuzhusheng
     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     MEDIUM_USERNAME: xuzhusheng
-    VITE_HOST: https://xuzhusheng.github.io/
+    VITE_HOST: https://xuzhusheng.github.io
     VITE_EMAIL_TEMPLATE_ID: portfolio
     VITE_EMAIL_SERVICE_ID: g
     VITE_EMAIL_API_PUBLIC_KEY: ${{ secrets.EMAIL_API_PUBLIC_KEY }}
