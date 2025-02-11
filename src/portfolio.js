@@ -56,7 +56,7 @@ const PROFILE_SKILLS = [
         lottie: ThreeDimension,
     },
     {
-        title: "Cloud Infra-Architecture",
+        title: "Infra-Architecture",
         skills: [
             { name: "Redis", icon: "logos:redis" },
             { name: "MySQL", icon: "logos:mysql-icon" },
