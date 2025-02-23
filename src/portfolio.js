@@ -61,7 +61,12 @@ const PROFILE_SKILLS = [
             { name: "Redis", icon: "logos:redis" },
             { name: "MySQL", icon: "logos:mysql-icon" },
             { name: "PostgreSQL", icon: "logos:postgresql" },
-            { name: "MongoDB", icon: "logos:mongodb-icon" },
+            {
+                name: "ClickHouse",
+                icon: "simple-icons:clickhouse",
+                color: "#FAFF69",
+            },
+            // { name: "MongoDB", icon: "logos:mongodb-icon" },
             { name: "RabbitMQ", icon: "logos:rabbitmq-icon" },
             { name: "Celery", icon: "simple-icons:celery", color: "#B6DE64" },
             { name: "Nginx", icon: "logos:nginx" },
