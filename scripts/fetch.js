@@ -149,5 +149,14 @@ const updateBlogs = async (username) => {
     updateURL("BLOGS_URL", filename)
 }
 
-updateProfile();
-updateBlogs(MEDIUM_USERNAME);
+try {
+    updateProfile();
+} catch (e) {
+    console.error(e);
+}
+
+try {
+    updateBlogs(MEDIUM_USERNAME);
+} catch (e) {
+    console.error(e);
+}
