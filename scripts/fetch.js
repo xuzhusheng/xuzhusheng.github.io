@@ -135,28 +135,27 @@ const updateProfile = () => {
 
 
 const updateBlogs = async (username) => {
-    
-    const rss = await rss2json.parse(`https://medium.com/feed/@${username}`);
-    const data = JSON.stringify(rss)
-    const md5 = crypto.createHash('md5').update(data).digest('hex');
-    const filename = `./public/blogs.${md5}.json`
+    try{
+        const rss = await rss2json.parse(`https://medium.com/feed/@${username}`);
+        const data = JSON.stringify(rss)
+        const md5 = crypto.createHash('md5').update(data).digest('hex');
+        const filename = `./public/blogs.${md5}.json`
 
-    fs.writeFile(filename, data, function (err) {
-        if (err) return console.log(err);
-        console.log("saved file to " + filename);
-    });
+        fs.writeFile(filename, data, function (err) {
+            if (err) return console.log(err);
+            console.log("saved file to " + filename);
+        });
 
-    updateURL("BLOGS_URL", filename)
+        updateURL("BLOGS_URL", filename)
+    }catch (e) {
+        console.error("fetch medium blogs error...");
+
+    }
+
 }
 
-try {
-    updateProfile();
-} catch (e) {
-    console.error(e);
-}
 
-try {
-    updateBlogs(MEDIUM_USERNAME);
-} catch (e) {
-    console.error(e);
-}
+updateProfile();
+updateBlogs(MEDIUM_USERNAME);
+
+console.info("fetch.js finished...");

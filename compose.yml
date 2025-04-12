@@ -16,7 +16,7 @@ services:
         #       ignore:
         #         - node_modules/
         #     - action: rebuild
-        #       path: pacakage.json
+        #       path: package.json
         tty: true
 
     prod:
