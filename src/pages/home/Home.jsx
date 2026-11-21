@@ -33,7 +33,7 @@ export default function Home() {
                         <SocialMedia />
                         <div className="button-div">
                             <Button text="Contact Me" href="/contact" />
-                            <Button text="See My Resume" href="/resume" />
+                            {/* <Button text="See My Resume" href="/resume" /> */}
                         </div>
                     </div>
                     <LazyLottie animationUrl={GreetingLottie} />

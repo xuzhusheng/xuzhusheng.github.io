@@ -5,7 +5,7 @@ import Home from "../../pages/home/Home";
 import Root from "../../pages/root/Root";
 
 const Blogs = lazy(() => import("../../pages/blogs/Blogs"));
-const Resume = lazy(() => import("../../pages/resume/Resume"));
+// const Resume = lazy(() => import("../../pages/resume/Resume"));
 const Contact = lazy(() => import("../../pages/contact/Contact"));
 
 const router = createBrowserRouter([
@@ -24,10 +24,10 @@ const router = createBrowserRouter([
                 path: "blogs",
                 element: <Blogs />,
             },
-            {
-                path: "resume",
-                element: <Resume />,
-            },
+            // {
+            //     path: "resume",
+            //     element: <Resume />,
+            // },
 
             {
                 path: "contact",

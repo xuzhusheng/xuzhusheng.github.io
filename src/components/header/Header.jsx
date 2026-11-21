@@ -22,7 +22,7 @@ export default function Header() {
     const links = [
         { to: "/home", label: "Home" },
         { to: "/blogs", label: "Blogs" },
-        { to: "resume", label: "Resume" },
+        // { to: "resume", label: "Resume" },
         { to: "/contact", label: "Contact Me" },
     ];
 
